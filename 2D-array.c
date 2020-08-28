@@ -35,5 +35,26 @@ The hourglass which has the largest sum is:
 2 4 4
   2
 1 2 4 */
+#include <stdio.h>
+int main(){
+int i,j,arr[10][10];
+for(i=0;i<6;i++){
+    for(j=0;j<6;j++){
+        scanf("%d",&arr[i][j]);
+    }
+}
+int sum=0,maxsum=-2000;
+for(i=0;i<6;i++){
+    for(j=0;j<6;j++){
+        if (i+2<6 && j+2<6){
+            sum=arr[i][j] +arr[i][j+1] +arr[i][j+2] + arr[i+1][j+1] +arr[i+2][j] +arr[i+2][j+1] +arr[i+2][j+2] ;
+            if(sum > maxsum){
+              maxsum = sum;
+            }}
+    }
+}
+printf("%d",maxsum);
+return 0;
+}
 
 
